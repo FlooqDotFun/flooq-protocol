@@ -1,0 +1,38 @@
+/*
+  Colour tokens. This is the only file with colour literals.
+  Provenance: k-means (k=10, kmeans++ init, 40 iters) over alpha>=240 pixels of brand/LOGO FLOOQ PNG...png, each centroid snapped to nearest real pixel coordinate.
+  Page background and surface are real pixels of the supplied cover banner, coordinates noted per line.
+  Every other colour in the project is a var() of these or a color-mix() between them.
+*/
+:root {
+  --sun: #fcb247; /* pixel (742,648) of brand/LOGO FLOOQ PNG...png, cluster share 0.0538 */
+  --coral: #fb6649; /* pixel (735,741) of brand/LOGO FLOOQ PNG...png, cluster share 0.0977 */
+  --rose: #f22a8b; /* pixel (839,971) of brand/LOGO FLOOQ PNG...png, cluster share 0.0888 */
+  --magenta: #f531c0; /* pixel (1016,1150) of brand/LOGO FLOOQ PNG...png, cluster share 0.1292 */
+  --fuchsia: #dd28f0; /* pixel (1014,1077) of brand/LOGO FLOOQ PNG...png, cluster share 0.1245 */
+  --violet: #a135f1; /* pixel (1179,1026) of brand/LOGO FLOOQ PNG...png, cluster share 0.1169 */
+  --orchid: #e375e8; /* pixel (1381,665) of brand/LOGO FLOOQ PNG...png, cluster share 0.1451 */
+  --mist: #efd8ea; /* pixel (1071,618) of brand/LOGO FLOOQ PNG...png, cluster share 0.1072 */
+  --peach: #fdbf9a; /* pixel (754,722) of brand/LOGO FLOOQ PNG...png, cluster share 0.0597 */
+  --salmon: #fb7f83; /* pixel (986,1201) of brand/LOGO FLOOQ PNG...png, cluster share 0.077 */
+  --bg: #000000; /* pixel (0,0) of reference/SAMPUL FLOOQ JPG.jpg.jpeg */
+  --surface: #170211; /* pixel (1092,12) of reference/SAMPUL FLOOQ JPG.jpg.jpeg */
+
+  --on-dark: var(--mist);
+  --on-dark-2: color-mix(in srgb, var(--mist) 64%, var(--bg));
+  --on-dark-3: color-mix(in srgb, var(--mist) 42%, var(--bg));
+  --dark-line: color-mix(in srgb, var(--mist) 14%, transparent);
+  --dark-line-strong: color-mix(in srgb, var(--mist) 30%, transparent);
+  --veil: color-mix(in srgb, var(--mist) 6%, transparent);
+  --veil-2: color-mix(in srgb, var(--mist) 10%, transparent);
+  --scrim: color-mix(in srgb, var(--bg) 78%, transparent);
+  --up: var(--sun);
+  --down: var(--rose);
+  --grad: linear-gradient(135deg, var(--sun), var(--rose), var(--violet));
+  --grad-x: linear-gradient(90deg, var(--sun), var(--rose), var(--violet));
+
+  --ease: cubic-bezier(0.2, 0.7, 0, 1);
+  --gutter: clamp(20px, 5vw, 48px);
+  --radius: 28px;
+  --nav-h: 60px;
+}

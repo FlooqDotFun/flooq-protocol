@@ -1,0 +1,11 @@
+/* Without scripts everything is visible and the scenes become a plain stack. */
+[data-reveal], [data-words], .qh-copy > :not(h1), .tick { opacity: 1 !important; transform: none !important; }
+.qh { height: auto; }
+.qh-stage { position: relative; height: auto; min-height: 100svh; }
+.scene { height: auto; }
+.scene-stage { position: static; height: auto; grid-template-columns: minmax(0, 1fr); padding-block: 96px; }
+.captions { display: grid; gap: 40px; min-height: 0; }
+.caption, .layer { position: static; opacity: 1; transform: none; }
+.scene-visual { display: grid; gap: 48px; height: auto; }
+.v-fold .sweep { -webkit-mask-image: none; mask-image: none; }
+.ticker, .board-head { display: none; }

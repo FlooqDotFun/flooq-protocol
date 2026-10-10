@@ -1,0 +1,66 @@
+{
+  "schema": "one record per external fact; state is stated | absent | unconfirmed; absent and unconfirmed records carry no value and no url",
+  "records": {
+    "chain": {
+      "label": "Chain",
+      "kind": "text",
+      "state": "stated",
+      "value": "Solana",
+      "source": "client statement",
+      "scope": "batch-level",
+      "checked": "2026-10-10"
+    },
+    "rpc": {
+      "label": "RPC",
+      "kind": "url",
+      "state": "stated",
+      "url": "https://solana-rpc.publicnode.com",
+      "source": "client statement",
+      "scope": "batch-level",
+      "checked": "2026-10-10"
+    },
+    "domain": {
+      "label": "Domain",
+      "kind": "url",
+      "state": "stated",
+      "url": "https://flooq.fun",
+      "source": "client statement",
+      "scope": "batch-level",
+      "checked": "2026-10-10"
+    },
+    "market": {
+      "label": "Market feed",
+      "kind": "url",
+      "state": "stated",
+      "url": "https://api.dexscreener.com/token-boosts/top/v1",
+      "pairsUrl": "https://api.dexscreener.com/tokens/v1/solana/{addresses}",
+      "source": "client statement",
+      "scope": "batch-level",
+      "checked": "2026-10-10"
+    },
+    "ca": {
+      "label": "Contract",
+      "kind": "address",
+      "state": "absent",
+      "source": "client statement",
+      "scope": "batch-level",
+      "checked": "2026-10-10"
+    },
+    "x": {
+      "label": "X",
+      "kind": "url",
+      "state": "absent",
+      "source": "client statement",
+      "scope": "batch-level",
+      "checked": "2026-10-10"
+    },
+    "github": {
+      "label": "GitHub",
+      "kind": "url",
+      "state": "absent",
+      "source": "client statement",
+      "scope": "batch-level",
+      "checked": "2026-10-10"
+    }
+  }
+}

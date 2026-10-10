@@ -1,0 +1,82 @@
+{
+ "method": "k-means (k=10, kmeans++ init, 40 iters) over alpha>=240 pixels of brand/LOGO FLOOQ PNG...png, each centroid snapped to nearest real pixel coordinate",
+ "source": "brand/LOGO FLOOQ PNG...png",
+ "size": [
+  2000,
+  2000
+ ],
+ "palette": [
+  {
+   "hex": "#e375e8",
+   "x": 1381,
+   "y": 665,
+   "share": 0.1451
+  },
+  {
+   "hex": "#f531c0",
+   "x": 1016,
+   "y": 1150,
+   "share": 0.1292
+  },
+  {
+   "hex": "#dd28f0",
+   "x": 1014,
+   "y": 1077,
+   "share": 0.1245
+  },
+  {
+   "hex": "#a135f1",
+   "x": 1179,
+   "y": 1026,
+   "share": 0.1169
+  },
+  {
+   "hex": "#efd8ea",
+   "x": 1071,
+   "y": 618,
+   "share": 0.1072
+  },
+  {
+   "hex": "#fb6649",
+   "x": 735,
+   "y": 741,
+   "share": 0.0977
+  },
+  {
+   "hex": "#f22a8b",
+   "x": 839,
+   "y": 971,
+   "share": 0.0888
+  },
+  {
+   "hex": "#fb7f83",
+   "x": 986,
+   "y": 1201,
+   "share": 0.077
+  },
+  {
+   "hex": "#fdbf9a",
+   "x": 754,
+   "y": 722,
+   "share": 0.0597
+  },
+  {
+   "hex": "#fcb247",
+   "x": 742,
+   "y": 648,
+   "share": 0.0538
+  }
+ ],
+ "bg": {
+  "hex": "#000000",
+  "x": 0,
+  "y": 0,
+  "source": "reference/SAMPUL FLOOQ JPG.jpg.jpeg"
+ },
+ "surface": {
+  "hex": "#170211",
+  "x": 1092,
+  "y": 12,
+  "source": "reference/SAMPUL FLOOQ JPG.jpg.jpeg"
+ }
+}

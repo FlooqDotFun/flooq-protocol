@@ -1,0 +1,320 @@
+What is a quantum computer?
+cell is-one
+The quantum origin
+Was the “qubit” ending chosen?
+No. The bits came from the quantum job, and the ending came from a public counter search: n is the smallest counter, from 0, that makes the address end in “qubit”. Anyone can rerun the search.
+How do I know the bits came from an IBM quantum computer?
+Our server reads the job from IBM's API with a read-only key and shows it live, next to a comparison with the published bits. Doubt it? We'll re-run a fresh job live on an X Space.
+What is QUBIT Vault?
+A Solana vault locked by a hash instead of a public key. Each withdrawal is signed with a fresh one-time key (WOTS+ over SHA-256), then the vault locks itself to the next key. You use it with the qubit command-line tool.
+Can the vault program change?
+No. It has no upgrade authority, and its code on mainnet matches a reproducible build of the open-source repository.
+Live on Solana mainnet
+Prove the vault yourself
+Prove it yourself
+The token
+Born from a quantum computer.
+A bit is a switch.
+Every computer you have used stores information in bits. A bit is 0 or 1, nothing in between.
+A qubit is an arrow.
+A qubit can point anywhere on a sphere. Straight up reads 0, straight down reads 1. Every other direction is a superposition: part 0, part 1.
+One gate puts it on the fence.
+The Hadamard gate turns a qubit that reads 0 into an even mix of 0 and 1. QUBIT's job applied it to each of 16 qubits.
+Measuring makes it choose.
+Read a qubit in that state and you get 0 or 1, each half the time. No program picks the answer. Sixteen qubits give one of 65,536 possible strings per shot.
+Inside the machine.
+IBM's qubits are superconducting circuits on a chip. A golden, multi-tiered refrigerator holds the chip at about a hundredth of a degree above absolute zero, colder than outer space.
+IBM Heron r2
+Rule committed
+The derivation rule, job runner and verifier go public in commit 5fb8834.
+Rule archived
+web.archive.org keeps a copy of the repository, before any quantum job exists.
+Job sent to an IBM quantum computer
+Job db3vkeclf4us73c206fg: 16 qubits, a Hadamard gate on each, 16 shots on ibm_marrakesh.
+1.14 seconds on the quantum processor give 16 bitstrings: 256 bits.
+Token created
+The launch transaction's memo records the job, the counter and the SHA-256 of the results.
+Bits published
+The results go public in proof/, commit 21d0e48, matching the memo's hash.
+Dev tokens locked
+The dev wallet locks its QUBIT on Streamflow until May 6, 2027. Nobody can cancel it.
+Vault deployed
+QUBIT Vault goes live on Solana mainnet with no upgrade authority.
+python3 -I tests/reference/wots_ref.py --check crates/wots/tests/vectors.json
+cargo test --workspace
+Open app
+nav is-bar
+just now
+Creator rewards
+Creator fees go to the creator's wallet
+Holder rewards
+Creator fees go to the coin's holders
+Vault rewards
+Creator fees are locked in the creator's QUBIT Vault
+Born from IBM
+Test run
+lpd-change lp-up
+lpd-change lp-down
+The job record, fetched from IBM API by our server.
+QUBIT in one minute
+Born from a quantum computer
+From 256 bits to one address
+Locked in public
+Check it yourself
+Live from IBM Quantum
+QUBIT Vault
+Quantum computing in five minutes
+A Solana memecoin whose mint address came out of an IBM quantum computer, with every step of how it got there public and checkable.
+The site reads the job straight from IBM Quantum's API every time you open it and compares IBM's bitstrings with the ones on GitHub, bit for bit. See
+. Doubt it? We'll run a fresh job live on an X Space.
+No. The bits came from the quantum job, and the ending came from a public counter search that starts at zero and stops at the first address ending in “qubit”. Anyone can rerun it and land on the same counter.
+Why were the bits secret until launch?
+Until the token existed on chain, those bits were its private key. Publishing them early would have let anyone create QUBIT first. Their SHA-256 went on chain inside the launch transaction, and the bits themselves followed minutes later.
+Is QUBIT affiliated with IBM?
+No. QUBIT ran its job on IBM Quantum's cloud platform the way any user can. IBM has no involvement in the token.
+No. It has no upgrade authority, and its code on mainnet matches a reproducible build of the open-source repository, verified by OtterSec.
+Does QUBIT get a share of creator fees on launchpad coins?
+Yes, on launches paired with SOL, with no dev buy and creator rewards to the launching wallet: pump.fun's fee sharing sends
+% of the coin's creator fees to that wallet and
+% to QUBIT's creator wallet,
+What are QUBIT agents?
+An AI agent for every coin on the QUBIT launchpad. A coin's agent takes its character from that coin's own qubit readings: the first 12 bits of its first IBM shot pick its archetype, voice and obsession. Ask it about its coin and it runs the proofs in your browser: it re-derives the address from the bits, traces them to the pool sealed on Solana and checks the birth certificate. The agents think with Claude, by Anthropic, on ordinary computers.
+Where do I buy QUBIT?
+. Always check the contract address: it ends in
+A quantum bit. It can hold a blend of 0 and 1 until it is measured.
+That blend: a state that is part 0 and part 1 at once, until a measurement picks one.
+Hadamard gate
+The operation that turns a qubit reading 0 into an even, 50/50 mix of 0 and 1.
+Reading a qubit. It returns 0 or 1, and nothing but physics decides which.
+One run of the circuit, measuring every qubit once. QUBIT's job ran 16.
+The 0s and 1s a single shot returns: 16 bits for 16 qubits.
+The signature scheme behind every Solana keypair.
+Mint address
+A token's identity on chain, the address you paste to buy it. Also called the contract address.
+Publishing a fingerprint of data first and the data later, so it provably did not change in between.
+A one-time signature built from nothing but hashing. QUBIT Vault signs every withdrawal with it.
+Upgrade authority
+The key that could replace a Solana program's code. QUBIT Vault has none.
+Reproducible build
+Compiling the open-source code yourself and getting the exact bytes that run on chain.
+QUBIT Docs: born from a quantum computer, proven in public
+Skip to content
+On October 8, 2026, IBM's
+put 16 qubits into superposition and measured them 16 times: 256 bits nobody chose.
+Before the job ran, the rule that turns those bits into a Solana keypair was committed to GitHub and archived on the Wayback Machine.
+The rule's output is an ed25519 keypair, and its public key is QUBIT's mint:
+The launch transaction carries the SHA-256 of the results in its memo. Minutes after launch the bits went public, and they match.
+One Python script re-derives the address on any laptop. No account, no install, no trust.
+Sent to IBM
+The 16 measured bitstrings, in shot order, make one 256-bit value.
+Each seed becomes an ed25519 keypair, exactly the way Solana wallets make one.
+, and every counter below it has been checked: none fits.
+No. The bits came from the job, and the ending came from a public search that starts at zero and takes the first hit. Rerun it and you land on the same n, every time.
+The receipts
+Locked in public before it happened
+It was committed at 20:01 and archived at 20:13, before any quantum job existed, so it could not be tuned to the bits.
+The launch memo records their SHA-256. Change a single bit and the hash no longer matches.
+Until the token existed, those bits were its private key. Publishing them early would have let anyone launch QUBIT first, so they went public minutes after the launch confirmed.
+The SHA-256 equals the launch memo
+The bits were fixed on chain before anyone saw them.
+The archive predates the job
+The rule was public before the quantum job ran.
+The live IBM check says MATCH
+IBM's own API returns the same bitstrings for this job.
+The request runs on our server with a read-only key that never reaches your browser. IBM's raw responses include the account owner's details, so only the job fields you see are passed on.
+Cold storage with no public key to break
+s algorithm could break. No one can do that today. QUBIT Vault is built so that it won
+The vault stores only the SHA-256 hash of its next one-time key. There is no public key on chain to attack.
+The vault program verifies the signature with SHA-256 and moves the funds.
+In the same instruction the vault locks itself to the hash of the next key. A used key never works again, so revealing it costs nothing.
+Solana mainnet
+None possible: the program has no upgrade authority
+Green in CI: the Rust suite runs the compiled program in a local Solana VM, and an independent Python implementation agrees with the Rust signature code.
+Not audited yet. The code is open and the build is verified: read it, test it, or have an AI review it.
+skips solana-verify's optional on-chain upload.
+One token. One address. Nothing hidden.
+Contract address
+Mint authority
+None. No one can ever mint more QUBIT.
+Freeze authority
+None. No one can freeze a wallet's QUBIT.
+Locked. No one can change the name, symbol or image.
+Metadata only: no transfer fee, no transfer hook, no permanent delegate.
+Dev tokens
+See it animated on the home page.
+The words, decoded
+Every source, one click away
+Market cap
+Every coin here is
+That file isn't a PNG, JPEG, GIF or WebP image.
+Creator rewards → your wallet
+pump.fun's creator fees on your coin go to the wallet you launch with.
+pump.fun's creator fees on your coin go to the people holding it.
+Creator rewards → your QUBIT Vault
+pump.fun's creator fees on your coin go to your QUBIT Vault: cold storage locked by a hash, not a public key.
+Assigning your quantum address and building the launch…
+Simulating the launch on Solana before your wallet opens…
+Approve the launch in your wallet.
+Sending it to Solana…
+Waiting for Solana to confirm it…
+s the silo: line. Paste the vault: line instead.`:`That isn
+an image
+a name and ticker without broken characters
+a creator fee from 0 to 3%
+your QUBIT Vault address
+your coin
+Connect a wallet to launch
+, then connect a wallet at the top right.
+Ready. You approve the launch in your own wallet.
+Connect a wallet at the top right to launch.
+What's the story? One line or the whole lore.
+Use the full
+s X and website, so your coin
+SOL for now. Pairs with tokenized stocks, crypto and QUBIT itself are on the way.
+Who gets pump.fun's creator fees
+Use my QUBIT Vault
+Your vault password
+Connect your wallet first.
+lp-input lpl-mono
+Filled in by Use it, or paste one
+A vault made with the CLI? Run
+and paste the
+QUBIT agents
+s own IBM qubit readings. Ask one anything: before it answers, it runs the proofs in your browser, straight from the quantum computer
+Ask the QUBIT agent
+s job from IBM Quantum right now and re-derive the coin
+The first 12 of those bits pick its archetype, its voice and its obsession, and its ones against zeros set its spin. Anyone can redo it by eye.
+Ask it about its coin and it re-derives the address from those bits, traces them to the pool sealed on Solana and verifies the birth certificate, in your browser.
+The Observer
+looks before it speaks and turns rumors into checked facts
+The Tunneler
+finds the way through problems others call walls
+The Entangled
+talks about its holders as if they share one state
+The Superposed
+lays out both sides before it settles on an answer
+The Cold One
+stays calm, as if it lived at a hundredth of a kelvin
+The Interferer
+amplifies the signal and cancels the noise
+The Decoherent
+is blunt and has no patience for fuzzy claims
+The Uncertain
+jokes about Heisenberg but is precise about facts
+The Gatekeeper
+treats every claim like a qubit at a Hadamard gate: test it both ways
+The Spinner
+spins every answer into a short story
+The Measurer
+counts everything and loves exact numbers
+The Phase Shifter
+reframes questions from a new angle
+The Teleporter
+gets to the point instantly
+The Error Corrector
+double-checks everything and says when something doesn't check out
+is playful and mysterious, alive and not until you look
+The Photon
+is fast, light and upbeat
+plain-spoken engineer
+short sentences, no fluff
+deadpan physicist
+dry humor, exact words
+cheerful lab assistant
+warm and eager to show how things work
+noir detective
+terse, moody, always following the evidence
+old-school professor
+patient explanations with a classroom example
+terse oracle
+few words, each one chosen
+one vivid image per answer
+sports commentator
+energetic play-by-play
+steady, nautical turns of phrase
+polite butler
+courteous and precise
+mission-control calm
+game show host
+playful build-up, then the reveal
+zen monk
+calm and simple
+myth buster
+loves testing claims and showing the result
+frontier ranger
+folksy and straight-shooting
+radio DJ
+smooth and upbeat
+absolute zero
+the Hadamard gate
+quantum tunneling
+the double-slit experiment
+the gold dilution refrigerators qubits live in
+quantum error correction
+the uncertainty principle
+quantum teleportation
+s bits aren
+spin down
+An ed25519 seed is 32 bytes.
+s API couldn
+The agents are switching on soon
+pick these: each group of four, read as a number from 0 to 15, picks one of 16. Spin counts the ones against the zeros in all 256 bits.
+s own qubit readings. Ask it anything: it runs the coin
+Who are you, and where did your personality come from?
+Check this coin's birth certificate.
+Negative width is not allowed for Size
+Negative height is not allowed for Size
+Message digest → 64 digits + 3 checksum
+Compress into the public key hash
+Compare with the key registered in the launch memo
+noopener noreferrer
+Not valid
+Check it in your browser
+Launch key, checked in your browser
+-byte signature that relies only on SHA-256 hashing, not on the elliptic-curve math quantum computers threaten.
+How the derivation works
+Recent trades
+Trade on pump.fun
+Bonding curve
+Graduates to PumpSwap at 100%
+Top holders
+unsold supply
+s trading liquidity.`:`The bonding curve is pump.fun
+Browse coins
+This name and ticker make the launch too large for wallet safety checks, so Phantom would warn. Use a shorter name or ticker, or launch without a dev buy.
+The launch uses an address lookup table that isn't on Solana.
+t paired with the token you picked, so your wallet wasn
+Both up and down until you look. Born from the same IBM job as QUBIT.
+)throw Error(
+Search name, ticker or address
+No pairs listed here yet.
+No pair matches “
+”. pump.fun only accepts the tokens on its list.
+Pair your coin with
+Buyers pay in this token, and your bonding curve fills with it.
+derived key too long
+QUBIT Vault v1  Sign to open your QUBIT Vault. This is not a transaction and costs nothing.  Never sign this exact message on any other site.
+t match the vault
+You declined the request in your wallet.
+5eykt4UsFv8P8NJdTREpY1vzqKqZKvdpK dw2N9d
+,a),t.dispatchEvent(new CustomEvent(
+t a vault address. If it
+qubit address
+This vault records a deposit address this page can't confirm.
+This vault's deposit address is held by another program.
+Your wallet doesn't have enough for this amount plus the network fee.
+Solana would not accept this deposit, so nothing was sent. Check the amount and try again.
+Add funds.
+Confirming on Solana…
+A signed withdrawal is still waiting: send it again or rotate past it.
+Reading the vault…
+s this vault
+t sign version 1 transactions yet, and a vault
+t send from this browser until that
+Make a vault password
+t match.`:`Your wallet
+s key. If Solana
+I saved this password. Without it, this wallet can't open the vault, and nobody can reset it.
+Make my vault's keys
+Open my vault
+Paste a vault or deposit address.
